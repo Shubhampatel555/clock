@@ -1,0 +1,52 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <p class="h">00 :</p>
+    <p class="m">00 :</p>
+    <p class="s">00 :</p>
+  </div>
+</body>
+<script>
+ // Selecting elements by class name
+let hour = document.getElementsByClassName("h");
+let min = document.getElementsByClassName("m");
+let sec = document.getElementsByClassName("s");
+
+// Function to update time
+function updateTime() {
+    // Get current time
+    let currentTime = new Date();
+    let currentHour = currentTime.getHours();
+    let currentMinute = currentTime.getMinutes();
+    let currentSecond = currentTime.getSeconds();
+    
+
+    // Update HTML elements
+    for (let i = 0; i < hour.length; i++) {
+        hour[i].innerText = currentHour;
+    }
+
+    for (let i = 0; i < min.length; i++) {
+        min[i].innerText = currentMinute;
+    }
+
+    for (let i = 0; i < sec.length; i++) {
+        sec[i].innerText = currentSecond;
+    }
+
+}
+
+// Initial call to update time
+updateTime();
+
+// Update time every second
+setInterval(updateTime, 1000);   
+
+  </script>
+</html>
